@@ -1,0 +1,11 @@
+aws_region = "ap-south-1"
+environment = "dev"
+product_name = "devopsofworld"
+vpc_name = "vpc"
+vpc_cidr_block = "10.0.0.0/16"
+availability_zones = ["ap-south-1a", "ap-south-1b","ap-south-1c"]
+public_subnet_cidr_blocks = [ "10.0.1.0/24","10.0.2.0/24","10.0.3.0/24" ]
+private_subnet_cidr_blocks = [ "10.0.4.0/24","10.0.5.0/24","10.0.6.0/24" ]
+key_pair_name = "my-terraform-key"
+bastion_ami = "ami-0a5ac53f63249fba0"
+instance_type = "t2.micro"
