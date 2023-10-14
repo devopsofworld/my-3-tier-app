@@ -28,3 +28,16 @@ module "bastion_instance" {
   vpc_id = module.my_vpc.vpc_id
 }
 
+
+module "eks_cluster" {
+  source = "./module/eks"
+  cluster_name = var.cluster_name
+  environment = var.environment
+  product_name = var.product_name
+  subnet_ids = module.my_vpc.private
+  node_group_desired_size = var.node_group_desired_size
+  node_group_max_size = var.node_group_max_size
+  node_group_min_size = var.node_group_min_size
+  node_group_name = var.node_group_name
+#   eks_instance_type =var.eks_instance_type
+}
