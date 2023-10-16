@@ -78,6 +78,10 @@ variable "node_group_min_size" {
   default     = 1
 }
 
-# variable "eks_instance_type" {
-#   description = "The Instance type of Node group" 
-# }
+variable "private_instance_ami" {
+  description = "AMI ID for the Bastion host"
+}
+
+variable "private_instance_type" {
+  description = "Instance type for the Bastion host"
+}

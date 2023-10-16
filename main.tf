@@ -28,7 +28,6 @@ module "bastion_instance" {
   vpc_id = module.my_vpc.vpc_id
 }
 
-
 module "eks_cluster" {
   source = "./module/eks"
   cluster_name = var.cluster_name
@@ -40,4 +39,15 @@ module "eks_cluster" {
   node_group_min_size = var.node_group_min_size
   node_group_name = var.node_group_name
 #   eks_instance_type =var.eks_instance_type
+}
+
+module "private_instance" {
+  source = "./module/private"  # Correct the source path
+  product_name         = var.product_name
+  environment          = var.environment
+  private_instance_ami = var.private_instance_ami
+  private_instance_type = var.private_instance_type
+  private_subnet_id = module.my_vpc.private[0]
+  key_name = module.aws_key_pair.key_name
+  vpc_id = module.my_vpc.vpc_id
 }

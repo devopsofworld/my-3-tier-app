@@ -19,3 +19,9 @@ node_group_max_size = 2
 node_group_min_size = 1
 node_group_name = "mynodegroup"
 # eks_instance_type = "t2.micro"
+
+
+
+#private instance 
+private_instance_ami = "ami-0a5ac53f63249fba0"
+private_instance_type = "t2.micro"
